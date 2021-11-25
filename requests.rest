@@ -1,0 +1,111 @@
+GET http://localhost:80/user-service/
+###
+GET http://localhost:80/get-subtitle-service/
+###
+GET http://localhost:80/get-meaning-service/
+###
+GET http://localhost:80/get-audio-service/
+###
+GET http://localhost:80/word-registry-service/
+###
+GET http://localhost:80/word-recomendation-service/
+###
+GET http://localhost:80/word-recomendation/test
+###
+POST http://localhost:80/user-service/new_user_reg
+Content-Type: application/json
+
+{
+    "password": "password",
+    "email": "example2@gmail.com",
+    "api_key": "AIzaSyB5ydOIa5tDNxvehwGnP7aLj_4e7CyyIBI"
+}
+###
+POST http://localhost:80/user-service/new_user_reg
+Content-Type: application/json
+
+{
+    "password": "password",
+    "email": "example4@gmail.com",
+    "api_key": "AIzaSyB5ydOIa5tDNxvehwGnP7aLj_4e7CyyIBI",
+    "toeic_score": 600
+}
+###
+POST http://localhost:80/user-service/login
+Content-Type: application/json
+
+{
+    "password": "password",
+    "email": "example@gmail.com" 
+}
+###
+POST http://localhost:80/get-meaning-service/get_meaning
+Content-Type: application/json
+
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwia2V5IjoiQUl6YVN5REtZOVQ2WjdYWVBSbEN4NmZMZGZldWpMZm1QbkRrbGRrIn0.WnhqWYiFo2uTUgY7Vn0rhnkrrR0ZSQb5HTxWAT-U2VQ",
+    "data": ["apple", "lemon"]
+}
+###
+POST http://localhost:80/get-subtitle-service/get_subtittle
+Content-Type: application/json
+
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwia2V5IjoiQUl6YVN5REtZOVQ2WjdYWVBSbEN4NmZMZGZldWpMZm1QbkRrbGRrIn0.WnhqWYiFo2uTUgY7Vn0rhnkrrR0ZSQb5HTxWAT-U2VQ",
+    "video_id": "0obYR-nf45I"
+}
+###
+POST http://localhost:80/get-related-video-service/get_related_videoid
+Content-Type: application/json
+
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwia2V5IjoiQUl6YVN5REtZOVQ2WjdYWVBSbEN4NmZMZGZldWpMZm1QbkRrbGRrIn0.WnhqWYiFo2uTUgY7Vn0rhnkrrR0ZSQb5HTxWAT-U2VQ",
+    "video_id": "0obYR-nf45I"
+}
+###
+
+POST http://localhost:80/word-registry-service/word_registry
+Content-Type: application/json
+
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwia2V5IjoiQUl6YVN5REtZOVQ2WjdYWVBSbEN4NmZMZGZldWpMZm1QbkRrbGRrIiwic2NvcmUiOjB9.Iub_oOIrTIicwElZOt67WvAw0UJbDyFWYJKgR_qMBuE",
+    "video_id": "0obYR-nf45I",
+    "data":[
+            {"eng": "lemon", "jp": "レモン"},
+            {"eng": "apple", "jp": "りんご"} 
+    ]
+}
+###
+
+POST http://localhost:80/word-registry-service/word_registry
+Content-Type: application/json
+
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwia2V5IjoiQUl6YVN5REtZOVQ2WjdYWVBSbEN4NmZMZGZldWpMZm1QbkRrbGRrIiwic2NvcmUiOjB9.Iub_oOIrTIicwElZOt67WvAw0UJbDyFWYJKgR_qMBuE",
+    "video_id": "0obYR-nf45q",
+    "data":[
+            {"eng": "english", "jp": "英語"},
+            {"eng": "japanese", "jp": "日本語"} 
+        ]
+}
+###
+
+POST http://localhost:80/word-registry-service/get_word_by_videoid
+Content-Type: application/json
+
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mywia2V5IjoiQUl6YVN5QjV5ZE9JYTV0RE54dmVod0duUDdhTGpfNGU3Q3l5SUJJIn0.8F7VSs0mwOZumZqt4vdN5WZLsuFlzfaTx5l4uJgjjf4"
+}
+
+###
+
+POST http://localhost:80/word-registry-service/get_all_words
+Content-Type: application/json
+
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mywia2V5IjoiQUl6YVN5QjV5ZE9JYTV0RE54dmVod0duUDdhTGpfNGU3Q3l5SUJJIn0.8F7VSs0mwOZumZqt4vdN5WZLsuFlzfaTx5l4uJgjjf4"
+}
+
+###
+GET http://localhost:80/word-recomendation-service/get-all
+Content-Type: application/json

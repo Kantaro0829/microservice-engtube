@@ -1,0 +1,10 @@
+db1/mysql_data/*
+wordDB/mysql_data/*
+.pytest_cache/*
+consumer/__pycache__/*
+getMeaningService/__pycache__/*
+getRelatedVideos/__pycache__/*
+getSubtitleService/__pycache__/*
+recommendWordService/__pycache__/*
+userService/__pycache__/*
+wordRegistryService/__pycache__/*

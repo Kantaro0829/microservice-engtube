@@ -1,0 +1,6 @@
+Flask
+pytest
+pyjwt
+sqlalchemy
+pymysql
+pika

@@ -1,0 +1,50 @@
+~getAudioService~
+    ユーザが求める英単語の音声ファイルを返す
+    -using library-
+        requests, base64, flask, flask_cors, pyjwt, pytest
+
+~getMeaningService~
+    ユーザが求める英単語の意味を返す
+    -using library-
+    pika, bs4, lxml, urlrib, flask, requests, pytest, pyjwt
+
+~getSubtitleService~
+    ユーザが視聴したYoutube動画の英語字幕を取得
+    -using library-
+
+~recomendWordService~
+    各ユーザと同じレベルのユーザが検索した英単語を表示
+    -using library-
+
+~userService~
+    ユーザログイン、登録
+    -using library-
+
+~wordRegistryService~
+    登録したい英単語、日本語をデータベースに登録、参照
+    -using library-
+
+~consumer~
+    *conncet to api_mongo*
+    *connect to rabbitmq*
+    rabbitmqサーバにデータがキューイングされたのを検知しそのデータをMongoDnに登録する
+
+    -using library-
+        flask, pika
+
+~userDB~
+    *connect to userService*
+    ユーザ情報を格納するためのDB
+
+~wordDB~
+    *connect to wordRegistryService*
+    英単語の情報を登録するためのDB
+
+~api_mongo~
+    *connect to recomendWordService*
+    *conncet to consumer*
+    ユーザが調べた単語を各レベルごとに分けて保存するためのｄｂ
+
+~rabbitmq~
+    メッセージをキューイングするためのサービス
+

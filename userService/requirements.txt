@@ -1,0 +1,6 @@
+flask
+pytest
+pyjwt
+flask_cors
+sqlalchemy
+PyMySQL

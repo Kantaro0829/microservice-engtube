@@ -1,0 +1,6 @@
+pika
+flask
+flask_cors
+pymongo
+pytest
+schema
