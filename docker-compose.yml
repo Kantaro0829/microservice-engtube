@@ -19,7 +19,7 @@ services:
       - db1
       - api_mongo
       - consumer
-      - producer
+      # - producer
       - rabbitmq
       - get-related-video-service
       - word-db
@@ -96,15 +96,15 @@ services:
     networks:
       - nginx_network
   
-  producer:
-    container_name: producer
-    build: ./producer
-    restart: always
-    tty: true
-    ports:
-      - 8000:8000
-    networks:
-      - nginx_network
+  # producer:
+  #   container_name: producer
+  #   build: ./producer
+  #   restart: always
+  #   tty: true
+  #   ports:
+  #     - 8000:8000
+  #   networks:
+  #     - nginx_network
 
   consumer:
     container_name: consumer
