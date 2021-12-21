@@ -1,0 +1,83 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # show the version of all, you will use for pipeline
+      - name: version check
+        run: |
+          echo Add other actions to build,
+          echo ------------------------------------------------------------
+          echo python version
+          python3 --version
+          echo ------------------------------------------------------------
+          echo docker version
+          docker --version
+          echo ------------------------------------------------------------
+          docker-compose --version
+      #build
+      - name: build images to push to DockerHub
+        run: |
+          echo build eginx
+          docker-compose build nginx
+          
+          echo build user-service
+          docker-compose build user-service
+          
+          echo build get-subtitle-service
+          docker-compose build get-subtitle-service
+          
+          echo build get-meaning-service
+          docker-compose build get-meaning-service
+          
+          echo build word-registry-service
+          docker-compose build word-registry-service
+          
+          echo build consumer
+          docker-compose build consumer
+          
+          echo build word-recomendation-service
+          docker-compose build word-recomendation-service
+          
+          echo build get-related-video-service
+          docker-compose build get-related-video-service
+          
+          echo build rabbitmq
+          docker-compose build rabbitmq
+          
+          echo build api_mongo
+          docker-compose build api_mongo
+          
+          echo build db1
+          docker-compose build db1
+          
+          echo build word-db
+          docker-compose build word-db
+          
+          
