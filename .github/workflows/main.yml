@@ -80,4 +80,10 @@ jobs:
           echo build word-db
           docker-compose build word-db
           
+      #images
+      - name: show docker images
+        run: |
+          echo show you the info of docker images
+          docker images
+          
           
